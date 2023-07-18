@@ -249,7 +249,7 @@ DidntChooseStarterScript:
 	end
 
 ElmDirectionsScript:
-	turnobject PLAYER, UP
+	turnobject PLAYER, UP	
 	opentext
 	writetext ElmDirectionsText1
 	waitbutton
@@ -474,7 +474,12 @@ AideScript_GivePotion:
 	opentext
 	writetext AideText_GiveYouPotion
 	promptbutton
+if DEF(_DEBUG)
+	giveitem MAX_REPEL ; If in debug mode, give a max repel, too
 	verbosegiveitem POTION
+else
+	verbosegiveitem POTION
+endc
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
