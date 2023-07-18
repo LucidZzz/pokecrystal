@@ -38,7 +38,13 @@ Marts:
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
+if DEF(_DEBUG) ; add near-infinite useful items in debug mode
+	db 6 ; # items
+	db RARE_CANDY
+	db MAX_REPEL
+else
 	db 4 ; # items
+endc	
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -46,7 +52,13 @@ MartCherrygrove:
 	db -1 ; end
 
 MartCherrygroveDex:
+if DEF(_DEBUG) ; add near-infinite useful items in debug mode
+	db 7 ; # items
+	db RARE_CANDY
+	db MAX_REPEL
+else
 	db 5 ; # items
+endc	
 	db POKE_BALL
 	db POTION
 	db ANTIDOTE
